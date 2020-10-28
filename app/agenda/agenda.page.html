@@ -1,0 +1,88 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Contactos
+    </ion-list-header>
+  </ion-list>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>A
+    <ion-item *ngFor="let item of listaContactos">
+      <ion-avatar slot="start">
+        <img [src]="'assets/imagenes/'+item.foto"></ion-avatar>
+      <ion-label>{{item.nombre}}<br> <small>{{item.celular}}</small></ion-label>
+      <ion-buttons slot="end">
+        <ion-chip color="primary" mode="ios" outline="true">
+          <a href="tel:+593967110746">
+            <ion-icon slot="start" name="call-outline"></ion-icon>
+          </a>
+        </ion-chip>
+        <ion-chip color="primary" mode="ios" outline="true">
+          <a [href]="'https://api.whatsapp.com/send?phone='+item.celular" target="_blank">
+            <ion-icon slot="start" name="logo-whatsapp" color="success"></ion-icon>
+          </a>
+        </ion-chip>
+      </ion-buttons>
+      
+    </ion-item>
+  </ion-label>
+  </ion-item-divider>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>B
+    <ion-item *ngFor="let item of listB">
+      <ion-avatar slot="start">
+        <img [src]="'assets/imagenes/'+item.foto"></ion-avatar>
+      <ion-label>{{item.nombre}}<br> <small>{{item.celular}}</small></ion-label>
+      <ion-buttons slot="end">
+        <ion-chip color="primary" mode="ios" outline="true">
+          <a href="tel:+593980895703">
+            <ion-icon slot="start" name="call-outline"></ion-icon>
+          </a>
+        </ion-chip>
+        <ion-chip color="primary" mode="ios" outline="true">
+          <a [href]="'https://api.whatsapp.com/send?phone='+item.celular" target="_blank">
+            <ion-icon slot="start" name="logo-whatsapp" color="success"></ion-icon>
+          </a>
+        </ion-chip>
+      </ion-buttons>
+    </ion-item>
+  </ion-label>
+  </ion-item-divider>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>C
+    <ion-item *ngFor="let item of listC">
+      <ion-avatar slot="start">
+        <img [src]="'assets/imagenes/'+item.foto"></ion-avatar>
+      <ion-label>{{item.nombre}}<br> <small>{{item.celular}}</small></ion-label>
+      <ion-buttons slot="end">
+        <ion-chip color="primary" mode="ios" outline="true">
+          <a href="tel:+593967110746">
+            <ion-icon slot="start" name="call-outline"></ion-icon>
+          </a>
+        </ion-chip>
+        <ion-chip color="primary" mode="ios" outline="true">
+          <a [href]="'https://api.whatsapp.com/send?phone='+item.celular" target="_blank">
+            <ion-icon slot="start" name="logo-whatsapp" color="success"></ion-icon>
+          </a>
+        </ion-chip>
+      </ion-buttons>
+    </ion-item>
+  </ion-label>
+  </ion-item-divider>
+  </ion-item-group>
+
+</ion-content>

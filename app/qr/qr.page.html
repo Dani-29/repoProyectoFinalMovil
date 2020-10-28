@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><h2 align="center">QR SCAN</h2></ion-title>
+    
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button *ngIf="showCamera" (click)="closeCamera()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+  <br>
+  <br>
+  <br>
+  <ion-icon *ngIf="showCamera" class="frame" name="scan-outline"></ion-icon>
+  <div *ngIf="!showCamera">
+    <ion-item *ngIf="textScanned"  (click)="openLink(textScanned)">
+      <ion-label>
+        <p>Texto de la QR</p>
+        <h2><b>{{ textScanned }}</b></h2>
+      </ion-label>
+      <ion-icon slot="end" name="open"></ion-icon>
+    </ion-item>
+    
+    
+  </div>
+  <br>
+  <br>
+
+  <div *ngIf="!showCamera" class="contenedor">
+      <h2 align="center" class="titulo">Escannear un codigo QR</h2>
+      <img src="assets/imagenes/QR.png" alt="">
+    
+  <ion-item lines="none">
+    <ion-label><b>Texto de la URL:</b></ion-label>
+    <br>
+    <br>
+    <ion-input [(ngModel)]="textToCode" placeholder="   example:netflix.com"></ion-input>
+  </ion-item>
+  <div align="center">
+    <ion-button color="tertiary"  (click)="createQRCode()">
+      <ion-icon slot="start" name="create"></ion-icon>
+      Crear un codigo QR
+    </ion-button>
+  </div>
+  
+
+  <div class="centrar" *ngIf="myAngularxQrCode">
+    <qrcode [qrdata]="myAngularxQrCode" [size]="150" [level]="'M'"></qrcode>
+  </div>
+</div>
+
+</ion-content>

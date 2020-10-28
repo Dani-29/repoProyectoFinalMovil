@@ -1,0 +1,24 @@
+<ion-header class="ion no-border">
+</ion-header>
+
+<ion-content id="item" fullscreen>
+  <ion-item class="botones">
+  <ion-button (click)="cerrarModal()" expand="block" fill="clear" shape="round">
+    <ion-icon slot="start" name="close"></ion-icon>
+  </ion-button>
+  <ion-button fill="clear" (click)="zoom(true)">
+   <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+  </ion-button>
+  <ion-button expand="block" fill="clear" shape="round" (click)="zoom(false)">
+    <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
+  </ion-button>
+</ion-item>
+<ion-slides [options]="options" #slides>
+  <ion-slide *ngFor="let imagen of imagenes">
+    <div class="swipper-zoom-container">
+      <img src="assets/galeria/{{imagen}}" alt="">
+    </div>
+  </ion-slide>
+</ion-slides>
+</ion-content>
+

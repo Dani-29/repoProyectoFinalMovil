@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-list>
+    <ion-item>
+        <ion-icon slot="start" name="moon"></ion-icon>
+        <ion-label>Dark Theme</ion-label>
+        <ion-toggle slot="end" [ngModel]="darkMode" (ionChange)="cambioColor()"></ion-toggle>
+    </ion-item>
+</ion-list>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides pager="true">
+
+    <ion-slide *ngFor='let item of slider'>
+      <div class="slide" no-padding>
+        <ion-text color="primary" style="font-family: 'Times New Roman', Times, serif; ">
+          <h1>PhotoMat</h1>
+        </ion-text>
+        <img src={{item.image}}>
+        <br>
+        <hr>
+        <div id="sombra">
+          <h2>Le damos la Bienvenida a <strong>PhotoMat </strong> </h2>
+          <p>Reuna todos contactos y archivos
+          </p> 
+          <br>
+          <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div id="slit">
+        <img src='assets/imagenes/5.png'>
+        <h2>Una mejor manera de administrar tu cosas personales</h2>
+      </div>
+      <div>
+        <ion-button (click)="Login()" fill="clear">Registrarse<ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>

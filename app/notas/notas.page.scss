@@ -1,0 +1,18 @@
+ion-slides,
+ion-slide {
+    height: 100%;
+    width: 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container img{
+    width: 150px;
+    height: auto;
+    background-color: rgb(255, 252, 250);
+    border-radius: 1em;
+}

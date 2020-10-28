@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Entrada</ion-title>
+    <ion-button (click)="salir()" slot="end" expand="block" fill="clear" shape="round">
+      Salir
+    </ion-button>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar showCancelButton="focus" cancelButtonText="Cancelar" animated placeholder="Buscar en el Correo" (ionChange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of lista">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-card>
+    <ion-list *ngFor="let items of correos">
+      <ion-item>
+        <button>
+          <ion-avatar>
+            <img src="/assets/imagenes/p.png">
+          </ion-avatar>
+        </button>
+        <ion-label>
+          <h1>Pinterest</h1>
+          <h2>!Hola, Daniela! Arte Vistual....</h2>
+          <p>Hemos encontrado nuevos tableros</p>
+          <p>recommendations@explore.pinterest.com</p>
+          <ion-button (click)="ruta1()" expand="block" fill="clear" shape="round">
+            Ver mas
+          </ion-button>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <button>
+          <ion-avatar>
+            <img src="assets/imagenes/a.png">
+          </ion-avatar>
+        </button>
+        <ion-label>
+          <h1>Ana de Platzi</h1>
+          <h2>Conoce la agenda semanal-Sesiones</h2>
+          <p>Haz parte de la comunidad que nuestro</p>
+          <p>team@platzi.com</p>
+          <ion-button expand="block" (click)="ruta2()" fill="clear" shape="round">
+            Ver mas
+          </ion-button>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <button>
+          <ion-avatar>
+            <img src="{{items.avatar}}">
+          </ion-avatar>
+        </button>
+        <ion-label>
+          <h1>{{items.titulo}}</h1>
+          <h2>{{items.subtitulo}}</h2>
+          <p>{{items.descripcion}}</p>
+          <p>{{items.correo}}</p>
+          <ion-button expand="block" (click)="ruta2()" fill="clear" shape="round">
+            Ver mas
+          </ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    
+  </ion-card>
+
+</ion-content>
